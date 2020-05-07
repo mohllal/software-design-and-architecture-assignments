@@ -1,0 +1,65 @@
+# Week 2: Object Oriented Modeling
+
+- The design activities happen ***iteratively*** and ***continuously***.
+- The design activities happen iteratively and continuously:
+  - Initially, the focus will be on the ***entity objects*** from the problem space.
+  - As a solution in software arises, we may introduce ***control objects*** that receive events and coordinate actions.
+  - We also introduce ***boundary objects*** that connect to services outside your system.
+- The models are often expressed in a visual notation called ***Unified Modeling Language*** or *UML*. The models also *serve as design documentation* for your software and can be easily *mapped to skeletal source code*, particularly for an object-oriented language like Java.
+- COBOL and Fortran followed an ***imperative paradigm*** which broke up *large programs into smaller programs* called ***subroutines***, which are like methods in Java.
+- The need for *better data management* led to changes to imperative programming and the rise of languages like Algol 68 and Pascal in the 1970s. The idea of ***local variables*** was introduced. Subroutines were called ***procedures*** which could *contain nested procedures*. And each one could have their own variables.
+- Algol 68 and Pascal support the notion of an ***abstract data type***, which is a ***custom datatype*** that is defined by the programmer and not built into the language. An abstract data type is essentially a *grouping of related information* that is denoted with a type.
+- The goal of object-oriented design is to make an abstract data type easier to write, *structure a system around abstract data types called classes* and introduce *the ability for an abstract data type to extend another* by introducing a concept called ***inheritance***.
+- A class acts like a factory, making individual objects, all of a specific type.
+- ***Abstraction*** is the idea of *simplifying a concept in the problem domain to its essentials* within some context. Abstraction allows you to better understand a concept by breaking it down into a simplified description that ignores unimportant details.
+- The abstraction captures ***the essential attributes and behavior*** for a concept with *no surprises* and *no definitions* that fall beyond its scope. In object oriented modeling, abstraction *pertains most directly to the notion of a class*.
+- The abstractions ***relative to some context***, and there can be different abstractions for one concept. Context or specific perspective is critical when forming an abstraction.
+- Some of abstraction benefits are simplifying the class design so they are more focused, succinct and understandable to someone else viewing them.
+- Encapsulation involves three ideas:
+  1. *Bundle attribute values or data*, and behaviors or functions, that manipulate those values together into a self-contained object.
+  2. *Expose certain data and functions* of that object, which can be accessed from other objects.
+  3. *Restrict access to certain data and functions* to only within that object.
+- Encapsulation helps with ***data integrity***. As well, encapsulation can secure sensitive information.
+- We often ***prevent outside access to all the attributes, except through specific methods***. That way, the attribute values of an object cannot be changed directly through variable assignments. Otherwise, such changes could break some assumption, or dependency for the data within an object.
+- Encapsulation *helps with software changes*. ***The accessible interface of a class can remain the same***, while the implementation of the attributes and methods can change. Outsiders using the class, do not need to care how the implementation actually works behind the interface.
+- Encapsulation helps with the idea of ***Black Box Thinking***. *Think of a class like a black box* that you cannot see inside for details about, how attributes are represented, or how methods compute the result, *but you provide inputs and obtain outputs by calling methods*. It doesn't matter what happens in the box to achieve the expected behaviors.
+- Encapsulation achieves what is called, the ***Abstraction Barrier***. Since the internal workings are not relevant to the outside world, this achieves an abstraction that effectively reduces complexity for the users of a class.
+- ***Decomposition*** is taking a whole thing and dividing it up into different parts. Or, on the flip side taking a bunch of separate parts with different functionalities, and combining them together to form a whole. Decomposition allows you to further break down problems into pieces that are easier to understand and solve.
+- A general rule for decomposition is to *look at the different responsibilities* of some whole thing, and *evaluate how you can separate them into different parts*, each with its own specific responsibility.
+- A whole might have a ***fixed*** or ***dynamic*** number of a certain type of part.
+  - If there is a fixed number, then over the lifetime of the whole object it will have exactly that much of the part object.
+  - If there is a dynamic number, then the whole object may gain new instances of those part objects over its lifetime.
+- A part itself can also serve as a whole containing further constituent parts. Important thing when using decomposition is to understand are how the parts relate to the whole, such as ***fixed or dynamic number***, ***their lifetimes***, and whether there is ***sharing***.
+- ***Generalization*** is frequently used when designing algorithms, which are meant to be used to perform the same action on different sets of data. We can generalize the actions into its own method, and simply pass it through a different set of data through arguments.
+- Generalization can be achieved by classes through ***inheritance***. In generalization we take ***repeated***, ***common***, or ***shared*** characteristics between two or more classes and factor them out into another class.
+- Inheritance and methods exemplify the *generalization design principle*. There are techniques that left us apply a rule called ***D.R.Y***., which stands for Don't Repeat Yourself.
+- ***CRC cards*** still have their place in ***prototyping*** and simulating various designs, but ***UML Class Diagrams*** are more suited for communicating the ***technical design*** of the software's implementation.
+- Each class in the Class Diagram is represented by a box. Each box is divided in three sections much like a CRC card:
+  - The ***top*** part is the ***Class Name***. This would be the same as the ***class name*** in the Java class.
+  - The ***middle*** part is the ***Properties*** section. This would be equivalent to the ***member variables*** in the Java class and defines the attributes of the abstraction.
+  - And finally, the ***bottom*** part is the ***Operations*** section which is equivalent to the ***methods*** in the Java class and defines the behaviors of the abstraction.
+- CRC card has too many ambiguities that prevent a programmer from translating a CRC card to code. One ambiguity is that a CRC card *does not show a separation between properties and operations*.
+- ***Getter Methods*** are methods that retrieve data, and their names typically begin with get and end with the name of the attribute whose value you will be returning.
+- ***Setter Methods*** change data, and their names typically begin with set and end with the name of the variable you wish to set.
+- There are *three types* of relationships found in decomposition, they define the interaction between the whole and the parts.
+  - ***Association***.
+  - ***Aggregation***.
+  - ***Composition***.
+- ***Association*** is a ***some*** relationship. This means that there is a ***loose relationship*** between two objects. These objects may interact with each other for some time.
+- The ***straight line*** between two UML objects denotes that the relationship between them is an *association*.
+- ***Aggregation*** is a ***has-a*** relationship where a whole has parts that belong to it. There may be sharing of parts among the wholes in this relationship. The has-a relationship from the whole to the parts is considered ***weak***. What this means is *although parts can belong to the wholes, they can also exist independently*.
+- The ***empty diamond line*** between two UML objects denotes that the relationship between them is an *aggregation*. The *empty diamond* denotes which object is *considered the whole* and not the part in the relationship.
+- ***Composition*** is an exclusive containment of parts, otherwise known as a ***strong has-a relationship***. What this means is that the whole cannot exist without its parts. If loses any of its parts, the whole ceases to exist. If the whole is destroyed, then all of its parts are destroyed too.
+- The ***solid diamond line*** between two UML objects denotes that the relationship between them is an *Composition*. The *solid diamond* denotes which object is *considered the whole* and not the part in the relationship.
+- Showing inheritance is very simple in a UML class diagram. Connecting two classes with a ***solid lined arrow***. *The superclass is at the head* of the arrow, and *the subclass is at the tail*. The standard way to draw inheritance into your UML diagrams, is to have the *arrow pointing upward*. This means that the superclasses are always toward the top, and the subclasses are always toward the bottom.
+- *You do not need to put any of the inherited superclasses attributes and behaviors into the subclass*. The arrow is used to communicate inheritance, which implies that the subclass will have the superclasses attributes and methods.
+- The ***hash symbol*** is used to communicate that the attributes are ***protected***. In Java, a protected attribute or method can only be accessed by, the encapsulating *class itself*, *all subclasses*, *all classes within the same package*.
+- ***Explicit constructors***, are use of that we can assign values to attributes during instantiation. A subclass's constructor m*ust call its superclass's constructor*, if the superclass has an explicit constructor. This is because explicit constructors of the superclass must be referenced by the subclass. Otherwise the superclass attributes would not be appropriately initialized.
+- For Java, only ***single implementation inheritance is allowed***. Well a superclass *can have multiple subclasses*. *A subclass can only inherit from one superclass*.
+- A ***Java interface also denotes a type***. Unlike a class, however, an interface ***only declares method signatures***, and *no constructors, attributes, or method bodies*. It specifies the expected behaviors in the method signatures, but does not provide any implementation details. So, an interface is like a ***contract to be fulfilled*** by implementing classes.
+- In Java, we use the key word `interface` to indicate that we are creating one. Standard Java naming convention *places the letter I before an actual name* to indicate an interface.
+- Interfaces are explicitly noted in UML class diagrams using ***guillemets, or French quotes***, to surround the words `interface`. The interaction between an interface and a class that is implementing the interface is indicated using a ***dotted arrow***. The class *touches the tail end* of the arrow and the interface *touches the head of the arrow*.
+- Like abstract classes, which are classes that cannot be instantiated, interfaces are a means in which you can implement ***polymorphism***. In object oriented languages, polymorphism is when *two classes have the same description of a behavior, but the implementations of the behavior may be different*.
+- Just like with class inheritance, *interfaces can inherit from other interfaces*. And just like with class inheritance, interface inheritance should not be abused.
+- Multiple inheritance can cause ***Data Ambiguity***. When the subclass inherits from two or more superclasses that have attributes with the same name or behaviors with the same method signature, how do you distinguish between them?
+- In Java, a class *can implement as many interfaces as we want*. This is because of the nature of interfaces. Since they are only contracts and do not enforce a specific way to complete these contracts, *overlapping method signatures are not a problem*.
