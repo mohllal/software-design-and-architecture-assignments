@@ -1,0 +1,12 @@
+# Week 2: Behavioural Design Patterns
+
+- The ***template method*** defines an algorithm's steps generally, deferring the implementation of *some steps to subclasses*. It is a behavioral design pattern and is concerned with the assignment of responsibilities.
+- The template method is best used when we can generalize between two classes into a new super class. Think of it like another technique to use when we notice we have two separate classes with very similar functionality in order of operations.
+- In software design, the ***Chain of Responsibility*** is a series of handler objects that are linked together. These handlers have methods that are written to handle specific requests.
+- When a client object sends a request, the first handler in the chain will try to process it. *If the handler can process the request, the request ends at this handler*. *If the handler cannot deal with the request, the handler will send the request to the next handler in the chain* who will try to process the request.
+- The ***state pattern*** is primarily used when we need to change the behavior of an object based upon the state that it's in at run-time.
+- The ***command pattern*** encapsulates the request as an object of its own. Usually, when one object makes a request for a second object to do an action, *the first object would call a method of the second object* and the second object would complete the task.
+- The command pattern has another object that invokes the command objects to complete whatever task it is supposed to do, called the ***command invoker***.
+- The ***command manager*** can also be used which basically keeps track of the commands, manipulates them and invokes them.
+- One purpose of using the command pattern is to ***store and schedule different requests***. When an object calls a method of another object, we can't really do anything to the method calls. Turning the different requests in our software into command objects can allow us to treat them as the way we would treat other objects.
+- Another important purpose of the command pattern is ***allowing commands to be undone or redone*** by having two lists, a history list which holds all the commands that have been executed, and a redo list which would be used to put commands that have been undone.
