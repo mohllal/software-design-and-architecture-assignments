@@ -1,6 +1,6 @@
-# Software Design and Architecture Notes
+# Software Design and Architecture Assignments
 
-This repository contains my notes, and highlights for the [Coursera's Software Design and Architecture](https://www.coursera.org/specializations/software-design-architecture) offered by [University of Alberta](https://www.ualberta.ca/index.html).
+This repository contains my assignments, and notes for the [Coursera's Software Design and Architecture](https://www.coursera.org/specializations/software-design-architecture) offered by [University of Alberta](https://www.ualberta.ca/index.html).
 
 In the Software Design and Architecture Specialization, I learned how to apply design principles, patterns, and architectures to create reusable and flexible software applications and systems. I also learned how to express and document the design and architecture of a software system using a visual notation.
 
